@@ -1,13 +1,14 @@
 package controller;
 
-import adapter.GameInterface;
 import model.Board;
 import view.View;
 
-public class Controller implements GameInterface {
+public class Controller{
 
 	private View view;
 	private Board board;
+	
+	
 	private boolean gamewon;
 	private boolean gameover;
 	private int points;
@@ -23,24 +24,34 @@ public class Controller implements GameInterface {
 		this.board = board;
 	}
 	
-	@Override
 	public void launch() {
 		// TODO Auto-generated method stub
 		initGame();
-
 		mainLoop();
 	}
 	private void initGame(){
 		
-	}
-	//update board, view, blocks, and so on
-	private void gameInfo(){
+		view.start();
+		//board.start
 		
 	}
+	//update board, view, blocks, and so on happens here by calling there functions
+	private void gameInfo(){
+		//new game
+		//play	
+	}
+	// the loop for view and model happens here
 	private void mainLoop(){
-		while(true){
-			gameInfo();
-		}
+		
+		do {
+			if (gameover != true){
+				gameInfo();
+			}
+			else{
+				//reset game
+			}
+				
+		} while(true);
 		
 	}
 

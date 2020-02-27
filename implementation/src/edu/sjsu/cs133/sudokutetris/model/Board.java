@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 /*
  * There should be no View methods here
  */
@@ -9,6 +11,9 @@ public class Board extends GameTemplate {
 	
 	private TetrisBlock tetrisblock;
 	private Player player;
+	
+	private final int FIRST_LEVEL_LENGTH = 9;
+	private final int FIRST_LEVEL_WIDTH = 9;
 	
 	private boolean gameover = false;
 	private boolean gamewon = false;
@@ -20,6 +25,31 @@ public class Board extends GameTemplate {
 	private int total_score;
 	private int level_total_score;
 	
+	private int board_length;
+	private int board_height;
+	
+	private ArrayList[][] board;
+	
+	
+	/**
+	 * 
+	 */
+	public Board() {
+		super();
+		// TODO Auto-generated constructor stub
+		board = new ArrayList[FIRST_LEVEL_LENGTH][FIRST_LEVEL_WIDTH];
+	}
+
+	/**
+	 * @param board_length
+	 * @param board_height
+	 */
+	public Board(int board_length, int board_height) {
+		super();
+		this.board_length = board_length;
+		this.board_height = board_height;
+		board = new ArrayList[board_length][board_height];
+	}
 	
 	@Override
 	protected void startgame() {
@@ -42,6 +72,8 @@ public class Board extends GameTemplate {
 		return iskeyPressed;
 	}
 	public void generateTetrisBlock(){
+		
+		tetrisblock.generateShape();
 		
 	}
 	public void update(){

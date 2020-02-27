@@ -23,7 +23,6 @@ import javax.swing.JTextField;
 public class View extends JPanel implements ActionListener {
 	
 	
-	
 	JFrame startFrame; 
 	JFrame gameFrame;
 	JFrame scoreFrame;
@@ -37,14 +36,8 @@ public class View extends JPanel implements ActionListener {
 	JButton quit; 
 	JButton view_score; 
 	
-
-	// Player cannon shot sprite.
-	//private ImageIcon fire = new ImageIcon(new ImageIcon(this.getClass().getResource("shot.png")).getImage().getScaledInstance(1, 40, Image.SCALE_DEFAULT));
-	//private Image shot_img = fire.getImage();
-	//private MoveableImage logo = new MoveableImage(300, 700, shot_img);
-	
-	
 	private ImageIcon logo = new ImageIcon(this.getClass().getResource("logo.png"));
+	
 	private JLabel gameName;
 	
 	public View() {
@@ -52,7 +45,6 @@ public class View extends JPanel implements ActionListener {
 		startFrame = new JFrame();
 		gameFrame =  new JFrame();
 		scoreFrame =  new JFrame();
-			
 		startContent =  new JPanel();
 		gameContent = new JPanel();
 		scoreContent = new JPanel();
@@ -64,6 +56,12 @@ public class View extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void start(){
+		 launchWindow();
+		 gameWindow();
+		 scoreWindow();
 	}
 	
 	public void launchWindow() {
@@ -86,8 +84,8 @@ public class View extends JPanel implements ActionListener {
 		
 		start.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				startFrame.setVisible(false);
-				gameFrame.setVisible(true);
+				//startFrame.setVisible(false);
+				//gameFrame.setVisible(true);
 			}	
 		});
 		view_score.addActionListener(new ActionListener() {
@@ -100,7 +98,6 @@ public class View extends JPanel implements ActionListener {
 				
 			}	
 		});
-	
 		
 		startContent.add(gameName);
 		gameName.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -108,11 +105,11 @@ public class View extends JPanel implements ActionListener {
 		view_score.setAlignmentX(Component.CENTER_ALIGNMENT);
 		quit.setAlignmentX(Component.CENTER_ALIGNMENT);
 		startContent.add(Box.createRigidArea(new Dimension(100, 50)));
+		
 		startContent.add(start);
 		startContent.add(view_score);
 		startContent.add(quit);
-
-
+		
 		startFrame.add(startContent);
 		startFrame.setVisible(true);
 		

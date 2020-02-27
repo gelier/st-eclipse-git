@@ -30,7 +30,7 @@ public class TetrisBlock {
 		
 	
 	}
-	protected ArrayList<Block> getShape(){
+	protected ArrayList[][] getShape(){
 		
 		return null;
 	}
