@@ -1,6 +1,9 @@
 # st-eclipse-git
 
-CS133: Project is to develop Tetris Sudoku, a game.
+San Jose State University
+-------------------------
+
+SP20: CMPE-133 Sec 02 -Soft Eng II: Project is to develop Tetris Sudoku, a game.
 
 Compiled in JAVA 8 (JDK 1.8)
 
