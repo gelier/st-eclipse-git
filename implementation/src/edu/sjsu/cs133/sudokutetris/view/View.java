@@ -45,7 +45,6 @@ public class View extends JPanel implements ActionListener {
 	
 	
 	private ImageIcon logo = new ImageIcon(this.getClass().getResource("logo.png"));
-	
 	private JLabel gameName;
 	
 	public View() {
@@ -113,7 +112,6 @@ public class View extends JPanel implements ActionListener {
 		startContent.add(view_score);
 		startContent.add(quit);
 
-		
 
 		startFrame.add(startContent);
 		startFrame.setVisible(true);
