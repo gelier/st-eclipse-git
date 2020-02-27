@@ -1,6 +1,6 @@
 # st-eclipse-git
 
-San Jose State University
+Tetris Sudoku
 -------------------------
 
 SP20: CMPE-133 Sec 02 -Soft Eng II: Project is to develop Tetris Sudoku, a game.
