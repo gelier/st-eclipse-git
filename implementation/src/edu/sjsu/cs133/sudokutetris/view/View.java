@@ -77,7 +77,7 @@ public class View extends JPanel implements ActionListener {
 		startFrame.setSize(600, 600);
 		startFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		startFrame.setResizable(false);
-		startFrame.setTitle("Sudoku Tet   asdsris");
+		startFrame.setTitle("Sudoku Tetris");
 		// Create welcome screen panel.
 		startContent = new JPanel();
 		gameName = new JLabel(logo);
