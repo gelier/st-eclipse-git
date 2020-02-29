@@ -36,7 +36,7 @@ public class View extends JPanel implements ActionListener {
 	JButton quit; 
 	JButton view_score; 
 	
-	private ImageIcon logo = new ImageIcon(this.getClass().getResource("logo.png"));
+	private ImageIcon logo = new ImageIcon(this.getClass().getResource("title.gif"));
 	
 	private JLabel gameName;
 	
@@ -66,14 +66,18 @@ public class View extends JPanel implements ActionListener {
 	
 	public void launchWindow() {
 		
+<<<<<<< Upstream, based on branch 'master' of https://github.com/gelier/st-eclipse-git.git
 		start = new JButton("S helloot yatyrt");
+=======
+		start = new JButton("Stassrt");
+>>>>>>> 298eacd test
 		quit  = new JButton("Quit");
 		view_score  = new JButton("Scores");
 		
 		startFrame.setSize(600, 600);
 		startFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		startFrame.setResizable(false);
-		startFrame.setTitle("Sudoku Tetris");
+		startFrame.setTitle("Sudoku Tet   ris");
 		// Create welcome screen panel.
 		startContent = new JPanel();
 		gameName = new JLabel(logo);
@@ -121,3 +125,5 @@ public class View extends JPanel implements ActionListener {
 		
 	}
 }
+
+
