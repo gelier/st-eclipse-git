@@ -13,7 +13,7 @@ public class Controller{
 	private boolean gameover;
 	private int points;
 	private int lives;
-	
+	//testhhhhh
 	/**
 	 * @param view
 	 * @param board
