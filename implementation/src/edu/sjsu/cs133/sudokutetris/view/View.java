@@ -66,7 +66,7 @@ public class View extends JPanel implements ActionListener {
 	
 	public void launchWindow() {
 		
-		start = new JButton("Statyrt");
+		start = new JButton("St yatyrt");
 		quit  = new JButton("Quit");
 		view_score  = new JButton("Scores");
 		
