@@ -2,9 +2,9 @@ package model;
 import java.lang.String;
 
 public class Player {
+	
 	String name;
 	int score;
-	
 	/**
 	 * 
 	 */
@@ -24,3 +24,5 @@ public class Player {
 		this.score = score;
 	}
 }
+
+

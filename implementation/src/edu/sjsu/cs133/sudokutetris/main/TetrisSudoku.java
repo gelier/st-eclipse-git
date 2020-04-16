@@ -1,10 +1,10 @@
 package main;
 
-import model.Board;
 import controller.Controller;
+import model.Board;
 import view.View;
 
-public class SudokuTetris {
+public class TetrisSudoku {
 
 		
 	public static void main(String args[]) throws Exception {
@@ -15,7 +15,6 @@ public class SudokuTetris {
 		Controller controller = new Controller(view, board);
 		controller.launch();
 		
+	
 	}
-
 }
-
