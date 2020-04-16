@@ -11,7 +11,6 @@ public class TetrisSudoku {
 		
 		View view = new View();		// Initiate View.
 		Board board = new Board();
-		
 		Controller controller = new Controller(view, board);
 		controller.launch();
 		

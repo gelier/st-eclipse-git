@@ -7,8 +7,6 @@ public class Controller{
 
 	private View view;
 	private Board board;
-	
-	
 	private boolean gamewon;
 	private boolean gameover;
 	private int points;

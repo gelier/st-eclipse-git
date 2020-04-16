@@ -3,10 +3,8 @@ package model;
 import java.util.ArrayList;
 
 public class TetrisBlock {
-
 	private final int WIDTH = 4;
 	private final int HEIGHT = 2;
-	
 	private ArrayList[][]shape;
 	/**
 	 * 

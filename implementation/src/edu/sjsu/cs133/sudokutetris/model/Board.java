@@ -14,7 +14,6 @@ public class Board extends GameTemplate {
 	
 	private final int FIRST_LEVEL_LENGTH = 9;
 	private final int FIRST_LEVEL_WIDTH = 9;
-	
 	private boolean gameover = false;
 	private boolean gamewon = false;
 	private boolean iskeyPressed = false; //may use an array of events than boolean

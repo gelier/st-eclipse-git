@@ -2,7 +2,6 @@ package model;
 import java.lang.String;
 
 public class Player {
-	
 	String name;
 	int score;
 	/**

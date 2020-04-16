@@ -32,6 +32,7 @@ public class View extends JPanel implements ActionListener {
 	JFrame gameFrame;
 	JFrame scoreFrame;
 	
+	
 	JPanel startContent;
 	JPanel gameContent;
 	JPanel scoreContent;
@@ -202,7 +203,7 @@ public class View extends JPanel implements ActionListener {
 		}
 	}
 	/* 
-	 * 
+	 * **
 	 * 
 	 * */
 	public void paintComponent(Graphics g) {
