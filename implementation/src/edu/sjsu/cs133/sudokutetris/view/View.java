@@ -12,6 +12,8 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -31,7 +33,6 @@ public class View extends JPanel implements ActionListener {
 	JFrame startFrame; 
 	JFrame gameFrame;
 	JFrame scoreFrame;
-	
 	
 	JPanel startContent;
 	JPanel gameContent;
@@ -88,11 +89,16 @@ public class View extends JPanel implements ActionListener {
 		startFrame.setTitle("Sudoku Tetris");
 		// Create welcome screen panel.
 		startContent = new JPanel();
+		//add the sudokuteris logo
 		gameName = new JLabel(logo);
 		gameName.setSize(new Dimension(50,50));
 		
 		startContent.setLayout(new BoxLayout(startContent, BoxLayout.Y_AXIS));
 		startContent.setBackground(Color.black);
+		
+		start = new JButton("Start");
+		quit  = new JButton("Quit");
+		view_score  = new JButton("Scores");
 		
 		start.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -189,8 +195,8 @@ public class View extends JPanel implements ActionListener {
 	}
 	
 	public void createGrid() {
-		grid = new JLabel[81];
-
+		
+		grid = new JLabel[16];
 		for(int index = 0; index < 4 ;index++) {
 			for(int i = 0; i < 4; i++) {
 				grid[index] = new JLabel("x");
@@ -203,7 +209,7 @@ public class View extends JPanel implements ActionListener {
 		}
 	}
 	/* 
-	 * **
+	 * 
 	 * 
 	 * */
 	public void paintComponent(Graphics g) {
@@ -211,18 +217,61 @@ public class View extends JPanel implements ActionListener {
 		repaint(g);
 		
 	}
-
 	private void repaint(Graphics g) {
 		// TODO Auto-generated method stub
 		
 	}
-	public void drawGrid() {
-		
-	}
+	// TODO draw tetris blocks 
 	public void drawBlocks() {
 		
 	}
+	// TODO draw lives, needs image
+	public void drawLives() {
+		
+	}
+	// TODO draw timer
+	public void drawTimer() {
+		
+	}
+	// TODO Auto-generated method stub
+	public void drawPlayerScore() {
+		
+	}
+	// TODO Auto-generated method stub
 	public void setPoints(int points) {
 		
 	}
+	// TODO Auto-generated method stub
+	public void setBlocksVisibility() {
+		
+	}
+	// TODO Auto-generated method stub
+	public void setLives() {
+		
+	}
+	// TODO Auto-generated method stub
+	public void setTimer() {
+		
+	}
+	public void updateGrid() {
+		
+	}
+	
+	// TODO Auto-generated method stub
+	@SuppressWarnings("unused")
+	private class MouseHandler implements MouseMotionListener {
+
+		@Override
+		public void mouseDragged(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mouseMoved(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
 }
