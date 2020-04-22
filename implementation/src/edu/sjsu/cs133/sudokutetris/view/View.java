@@ -45,6 +45,9 @@ public class View extends JPanel implements ActionListener {
 	JButton start; 
 	JButton quit; 
 	JButton view_score; 
+	JButton quit_game;
+	JButton save;
+	JButton main;
 	
 	private ImageIcon logo = new ImageIcon(this.getClass().getResource("title.gif"));
 	
@@ -134,6 +137,9 @@ public class View extends JPanel implements ActionListener {
 	}
 	public void gameWindow() {
 		
+		quit_game = new JButton("Quit");
+		save =  new JButton("Save");
+		
 		gameFrame.setSize(600, 600);
 		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//gameFrame.setResizable(false);
@@ -146,21 +152,35 @@ public class View extends JPanel implements ActionListener {
 		
 		gameContent.setBackground(Color.lightGray);
 		
-		gameContent.setLayout(new BoxLayout(gameContent, BoxLayout.X_AXIS));
+		gameContent.setLayout(new BoxLayout(gameContent, BoxLayout.Y_AXIS));
 		gameContent.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		
 		score.setBorder(BorderFactory.createTitledBorder("SCORE"));
 		lives.setBorder(BorderFactory.createTitledBorder("LIVES"));
-		score.setAlignmentX(Component.TOP_ALIGNMENT);
-		lives.setAlignmentX(Component.BOTTOM_ALIGNMENT);
+		score.setAlignmentX(Component.CENTER_ALIGNMENT);
+		lives.setAlignmentX(Component.CENTER_ALIGNMENT);
+		quit_game.setAlignmentX(Component.CENTER_ALIGNMENT);
+		save.setAlignmentX(Component.CENTER_ALIGNMENT);
 	
 		gameContent.add(score);
-		gameContent.add(Box.createVerticalGlue());
-		gameContent.add(Box.createVerticalGlue());
+		gameContent.add(Box.createHorizontalGlue());
+		gameContent.add(Box.createHorizontalGlue());
+		
 		
 		gameContent.add(lives);
-
-		gameContent.add(Box.createRigidArea(new Dimension(10, 50)));
+		
+		gameContent.add(Box.createRigidArea(new Dimension(10, 320)));
+		gameContent.add(save);
+		gameContent.add(quit_game);
+		
+		quit_game.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				gameFrame.setVisible(false);
+				scoreFrame.setVisible(true);
+			}	
+		});
+	
+	
 		gameFrame.add(gameContent, BorderLayout.EAST);
 		
 
@@ -168,7 +188,6 @@ public class View extends JPanel implements ActionListener {
 		boardContent.setLayout(new GridLayout(5,5));
 		boardContent.setBackground(Color.white);
 
-		
 		
 		createGrid();
 
@@ -187,11 +206,37 @@ public class View extends JPanel implements ActionListener {
 	}
 	public void scoreWindow() {
 		
-		gameFrame.setSize(600, 600);
-		gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		gameFrame.setResizable(false);
-		gameFrame.setTitle("Sudoku Tetris In Game");
-			
+		scoreFrame.setSize(600, 600);
+		scoreFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		scoreFrame.setResizable(false);
+		scoreFrame.setTitle("Sudoku Tetris In Game");
+		scoreContent.setLayout(new BoxLayout(scoreContent, BoxLayout.Y_AXIS));
+		scoreContent.setBackground(Color.black);
+		
+		JLabel scoreTitle = new JLabel("HIGH SCORES");
+		scoreTitle.setForeground(Color.white);
+		scoreTitle.setFont(new Font("Serif", Font.BOLD, 42));
+		scoreTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
+		
+		scoreContent.add(scoreTitle);
+		scoreContent.add(Box.createRigidArea(new Dimension(20, 70)));
+		scoreContent.add(Box.createRigidArea(new Dimension(20, 20)));
+		scoreContent.add(Box.createRigidArea(new Dimension(20, 20)));
+		scoreContent.add(Box.createRigidArea(new Dimension(20, 20)));
+		scoreContent.add(Box.createRigidArea(new Dimension(20, 20)));
+		scoreContent.add(Box.createRigidArea(new Dimension(20, 20)));
+		main = new JButton("Main");
+		main.setAlignmentX(Component.CENTER_ALIGNMENT);
+		main.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				scoreFrame.setVisible(false);
+				startFrame.setVisible(true);
+			}	
+		});
+		scoreContent.add(main);
+		scoreFrame.add(scoreContent, BorderLayout.CENTER);
+		
+		
 	}
 	
 	public void createGrid() {
