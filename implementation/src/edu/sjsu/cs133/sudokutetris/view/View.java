@@ -30,6 +30,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
@@ -38,45 +39,57 @@ import javax.swing.border.Border;
 public class View extends JPanel implements ActionListener {
 	
 	
-	JFrame startFrame; 
-	JFrame gameFrame;
-	JFrame scoreFrame;
-	JFrame inputScoreFrame;
+	private JFrame startFrame; 
+	private JFrame gameFrame;
+	private JFrame scoreFrame;
+	private JFrame inputScoreFrame;
 	
-	JPanel startContent;
-	JPanel gameContent;
-	JPanel scoreContent;
-	JPanel scoreBoard;
-	JPanel boardContent;
-	JPanel blocksContent;
-	JPanel usernamePanel;
+	private JLayeredPane gameFrame1;
 	
-	JTextField username;
+	private JPanel startContent;
+	private JPanel gameContent;
+	private JPanel scoreContent;
+	private JPanel scoreBoard;
+	private JPanel boardContent;
+	private JPanel blocksContent;
+	private JPanel usernamePanel;
 	
-	JButton start; 
-	JButton quit; 
-	JButton view_score; 
-	JButton quit_game;
-	JButton save;
-	JButton main;
-	JButton submit;
-	JButton retGame;
+	private JTextField username;
+	
+	private boolean game_quit = false;
+	
+	private JButton start; 
+	private JButton quit; 
+	private JButton view_score; 
+	private JButton quit_game;
+	private JButton save;
+	private JButton main;
+	private JButton submit;
+	private JButton retGame;
 	
 	private ImageIcon logo = new ImageIcon(this.getClass().getResource("title.gif"));
 	private ImageIcon scorelogo = new ImageIcon(this.getClass().getResource("highscores.gif"));
-	
+	private ImageIcon instructionlogo = new ImageIcon(this.getClass().getResource("instruction.gif"));
+
 	
 	private JLabel gameName;
 	private JLabel score;
 	private JLabel lives;
 	private JLabel grid[];
 	private JLabel scoreTitle;
+	private JLabel instruction;
 	
 
 	private String replaceName = "";
 	private String userName = "";
-	private String points = "500";
 	private static final String NEWLINE = "\n";
+	
+	
+	private String points = "800"; //String that holds the points, and parse to Integer to sort highscores 
+	
+	
+	
+
 	
 	public View() {
 		
@@ -113,6 +126,9 @@ public class View extends JPanel implements ActionListener {
 		gameName = new JLabel(logo);
 		gameName.setSize(new Dimension(50,50));
 		
+		instruction = new JLabel(instructionlogo);
+		instruction.setSize(new Dimension(50,50));
+		
 		startContent.setLayout(new BoxLayout(startContent, BoxLayout.Y_AXIS));
 		startContent.setBackground(Color.black);
 		
@@ -130,6 +146,8 @@ public class View extends JPanel implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				gameFrame.setVisible(false);
 				scoreFrame.setVisible(true);
+				usernamePanel.setVisible(false);
+				drawScoreboard();
 
 			}	
 		});
@@ -140,6 +158,7 @@ public class View extends JPanel implements ActionListener {
 		});
 		
 		startContent.add(gameName);
+		instruction.setAlignmentX(Component.CENTER_ALIGNMENT);
 		gameName.setAlignmentX(Component.CENTER_ALIGNMENT);
 		start.setAlignmentX(Component.CENTER_ALIGNMENT);
 		view_score.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -150,6 +169,7 @@ public class View extends JPanel implements ActionListener {
 		startContent.add(view_score);
 		startContent.add(quit);
 		
+		startContent.add(instruction);
 		startFrame.add(startContent);
 		startFrame.setVisible(true);
 		
@@ -199,7 +219,6 @@ public class View extends JPanel implements ActionListener {
 			}	
 		});
 	
-	
 		gameFrame.add(gameContent, BorderLayout.EAST);
 		
 
@@ -221,7 +240,6 @@ public class View extends JPanel implements ActionListener {
 		gameFrame.add(blocksContent, BorderLayout.SOUTH);
 		
 		
-		
 	}
 	public void scoreWindow() {
 		
@@ -234,7 +252,10 @@ public class View extends JPanel implements ActionListener {
 		scoreContent.setLayout(new BoxLayout(scoreContent, BoxLayout.Y_AXIS));
 		scoreContent.setBackground(Color.black);
 		scoreContent.add(Box.createRigidArea(new Dimension(15, 15)));
+		
+	
 		addUsername();
+	
 		scoreFrame.add(scoreContent);
 		
 	}
@@ -300,7 +321,7 @@ public class View extends JPanel implements ActionListener {
 		scoreBoard.add(Box.createRigidArea(new Dimension(30, 30)));
 	
 		try {
-			file = new FileReader(new File("src/edu/sjsu/cs133/sudokutetris/view/scoreboard.txt"));
+			file = new FileReader(new File("src/controller/scoreboard.txt"));
 			buff = new BufferedReader(file);
 			String line;
 			while ((line = buff.readLine()) != null) {
@@ -354,7 +375,7 @@ public class View extends JPanel implements ActionListener {
 			if (isInvalidName(username) == false) {
 				//if not write the name into the file
 				//src/edu/sjsu/cs133/sudokutetris/model/scoreboard.txt
-				writer = new BufferedWriter(new FileWriter("src/edu/sjsu/cs133/sudokutetris/view/scoreboard.txt", true));
+				writer = new BufferedWriter(new FileWriter("src/controller/scoreboard.txt", true));
 				writer.append(username+"="+this.points.strip()+NEWLINE);
 				writer.close();
 			}
@@ -442,7 +463,7 @@ public class View extends JPanel implements ActionListener {
 		String[] array = new String[5];;
 		//open file, read file, store content into an array
 		try {
-			file = new FileReader(new File("src/edu/sjsu/cs133/sudokutetris/view/scoreboard.txt"));
+			file = new FileReader(new File("src/controller/scoreboard.txt"));
 			buff = new BufferedReader(file);
 			String line;
 			int index = 0;
@@ -516,7 +537,7 @@ public class View extends JPanel implements ActionListener {
 			try {
 				sortArray(array);
 				//store array content to the file
-				writer = new BufferedWriter(new FileWriter("src/edu/sjsu/cs133/sudokutetris/view/scoreboard.txt", false));
+				writer = new BufferedWriter(new FileWriter("src/controller/scoreboard.txt", false));
 				for(int index = 0; index < array.length; index++){ 
 					if(array[index] != null) {
 						writer.append(array[index]+NEWLINE);
@@ -608,14 +629,16 @@ public class View extends JPanel implements ActionListener {
 	}
 	private void repaint(Graphics g) {
 		// TODO Auto-generated method stub
+		drawBlocks(g);
 		
 	}
 	// TODO draw tetris blocks 
-	public void drawBlocks() {
+	public void drawBlocks(Graphics g) {
 		
 	}
+	
 	// TODO draw lives, needs image
-	public void drawLives() {
+	public void drawLives(Graphics g) {
 		
 	}
 	// TODO draw timer
