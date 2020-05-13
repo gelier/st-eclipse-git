@@ -1634,5 +1634,3 @@ public class View extends JPanel implements ActionListener {
 	}
 
 }
-
-
