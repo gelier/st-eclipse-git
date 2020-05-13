@@ -7,10 +7,6 @@ public class Controller{
 
 	private View view;
 	private Board board;
-	private boolean gamewon;
-	private boolean gameover;
-	private int points;
-	private int lives;
 	
 	/**
 	 * @param view
@@ -23,36 +19,14 @@ public class Controller{
 	}
 	
 	public void launch() {
-		// TODO Auto-generated method stub
+		// TODO start view and board
 		initGame();
-		mainLoop();
+		// TODO current, newgame, resetgame,
+		//mainLoop();
 	}
 	private void initGame(){
-		
 		view.start();
 		//board.start
 		
 	}
-	//update board, view, blocks, and so on happens here by calling there functions
-	private void gameInfo(){
-		//new game
-		//play	
-	}
-	// the loop for view and model happens here
-	private void mainLoop(){
-		
-		do {
-			if (gameover != true){
-				gameInfo();
-			}
-			else{
-				//reset game
-			}
-				
-		} while(true);
-		
-	}
-
-	
-	
 }

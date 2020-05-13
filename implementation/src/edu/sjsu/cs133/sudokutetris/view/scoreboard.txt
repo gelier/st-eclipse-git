@@ -1,5 +1,0 @@
-Guiller=1200
-aloh=500
-mimi=400
-tota=400
-jiji=300
