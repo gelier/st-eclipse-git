@@ -12,7 +12,7 @@ public class TetrisBlock {
 	
 	
 	//Different shapes of Tetris.
-	
+
 	
 	private final Point[][][] Tetraminos = {
 			// I-Piece
