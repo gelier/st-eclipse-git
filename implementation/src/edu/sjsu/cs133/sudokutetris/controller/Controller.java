@@ -27,6 +27,5 @@ public class Controller{
 	private void initGame(){
 		view.start();
 		//board.start
-		
 	}
 }

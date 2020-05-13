@@ -23,6 +23,7 @@ import view.View;
  */
 public class TetrisSudoku {
 		
+	
 	public static void main(String args[]) throws Exception {
 		
 		View view = new View();		// Initiate View.

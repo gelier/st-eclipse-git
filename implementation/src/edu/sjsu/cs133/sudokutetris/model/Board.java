@@ -29,7 +29,6 @@ public class Board extends GameTemplate {
 	private int board_height;
 	private ArrayList[][] board;
 	
-	
 	/**
 	 * 
 	 */
