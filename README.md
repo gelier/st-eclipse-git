@@ -1,4 +1,4 @@
-# st-eclipse-git
+# Tetris Sudoku
 
 Tetris Sudoku
 -------------------------
