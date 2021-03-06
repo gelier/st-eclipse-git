@@ -34,12 +34,12 @@ How the game has been developed and what all requirements were met during the im
 The game will follow the MVC design pattern. Further alteration and additional design patterns may be implemented. 
 
 ### Launch Sreen
-![alt text](https://github.com/guiller-d/tetris-sudoku/blob/master/screenshots/st_image.png)
+![alt text](https://github.com/guiller-d/tetris-sudoku/blob/master/screenshots/st_image1.png)
 
 ### Game Screen
-![alt text](https://github.com/guiller-d/tetris-sudoku/blob/master/screenshots/st_image1.png)
+![alt text](https://github.com/guiller-d/tetris-sudoku/blob/master/screenshots/st_image2.png)
 
 ### Score Screen
-![alt text](https://github.com/guiller-d/tetris-sudoku/blob/master/screenshots/st_image1.png)
+![alt text](https://github.com/guiller-d/tetris-sudoku/blob/master/screenshots/st_image.png)
 
 
