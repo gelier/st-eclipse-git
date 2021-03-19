@@ -35,12 +35,13 @@ The game will follow the MVC design pattern. Further alteration and additional d
 
 ### Launch Sreen
 
-<img src="https://github.com/guiller-d/tetris-sudoku/blob/master/screenshots/st_image1.png" width="300" height="300">
+<img src="https://github.com/guiller-d/tetris-sudoku/blob/master/screenshots/st_image1.png" width="350" height="350">
 
 ### Game Screen
-![alt text](https://github.com/guiller-d/tetris-sudoku/blob/master/screenshots/st_image2.png)
+<img src="https://github.com/guiller-d/tetris-sudoku/blob/master/screenshots/st_image2.png" width="350" height="350">
 
 ### Score Screen
-![alt text](https://github.com/guiller-d/tetris-sudoku/blob/master/screenshots/st_image.png)
+<img src="https://github.com/guiller-d/tetris-sudoku/blob/master/screenshots/st_image.png" width="350" height="350">
+
 
 
